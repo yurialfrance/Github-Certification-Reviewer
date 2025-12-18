@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Foundation Certification Reviewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <div>
+                        <h1>GitHub Foundation</h1>
+                        <p class="subtitle">Certification Reviewer</p>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-stats">
+                        <span class="stat">Domain: <span id="currentDomain">-</span></span>
+                        <span class="stat">Progress: <span id="progressText">0/0</span></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="domain-nav" id="domainNav">
+            <!-- Domains will be populated by JavaScript -->
+        </nav>
+
+        <main class="main-content">
+            <div class="mode-selector" id="modeSelector">
+                <h2>Choose Study Mode</h2>
+                <div class="mode-grid">
+                    <button class="mode-card" data-mode="multiple-choice">
+                        <div class="mode-icon">✓</div>
+                        <h3>Multiple Choice</h3>
+                        <p>Test your knowledge with MCQ questions</p>
+                    </button>
+                    <button class="mode-card" data-mode="flashcard">
+                        <div class="mode-icon">⚡</div>
+                        <h3>Flashcards</h3>
+                        <p>Quick review with flip cards</p>
+                    </button>
+                    <button class="mode-card" data-mode="fill-blank">
+                        <div class="mode-icon">✎</div>
+                        <h3>Fill in the Blank</h3>
+                        <p>Complete the statements</p>
+                    </button>
+                    <button class="mode-card" data-mode="coding">
+                        <div class="mode-icon">{ }</div>
+                        <h3>Coding Challenges</h3>
+                        <p>Practice with code scenarios</p>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quiz-container hidden" id="quizContainer">
+                <div class="quiz-header">
+                    <button class="back-btn" id="backBtn">← Back to Modes</button>
+                    <div class="quiz-info">
+                        <span class="mode-badge" id="modeBadge"></span>
+                        <span class="question-counter" id="questionCounter"></span>
+                    </div>
+                </div>
+
+                <div class="question-card" id="questionCard">
+                    <!-- Question content will be populated by JavaScript -->
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                    <button class="btn btn-primary" id="nextBtn">Next Question</button>
+                </div>
+            </div>
+
+            <div class="results-container hidden" id="resultsContainer">
+                <div class="results-card">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-value" id="scoreValue">0%</div>
+                        </div>
+                        <div class="score-details">
+                            <p><strong id="correctCount">0</strong> correct answers</p>
+                            <p><strong id="totalCount">0</strong> total questions</p>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="retryBtn">Try Again</button>
+                        <button class="btn btn-secondary" id="newModeBtn">Choose New Mode</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>GitHub Foundation Certification Reviewer | Study hard, code harder! 💻</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
